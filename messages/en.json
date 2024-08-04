@@ -1,0 +1,76 @@
+{
+    "Navigation": {
+       "properties": "Properties",
+       "about": "About",
+       "contact": "Contact Us",
+       "footer": "We have been a cornerstone in the real estate industry for over 6 years. Our deep-roo"
+    },
+    "banner": {
+       "Title": "Discover Your Dream Home",
+       "subTitle1": "Explore Our Exclusive Collection of Prime Real Estate Properties",
+       "subTitle2": "Tailored to Your Lifestyle",
+       "button": "Explore Now"
+    },
+    "homeSearch": {
+       "any": "Any",
+       "type": "Property Type",
+       "bedroom": "Bedroom",
+       "location": "Location",
+       "button": "Search properties"
+    },
+    "properties": {
+        "properties": "Properties",
+        "view": "View more"
+    },
+    "card": {
+        "sale": "For Sale",
+        "rent": "For Rent"
+    },
+    "about": {
+        "title": "About Gallilou Immobolier",
+        "desc": "we have been a cornerstone in the real estate industry for over 11 years. Our deep-rooted expertise and unwavering commitment to excellence have made us a trusted name in the market. Whether you're buying, selling, or renting, we offer tailored solutions to meet your unique needs."
+    },
+    "selloffer": {
+        "title": "Do you have property to sell?",
+        "sub1": "Call us and add it on GALLILOU IMMOBILIER",
+        "sub2": "We take care of everything from customer service to the sell.",
+        "sub3": "Fast Sell",
+        "button": "Get started"
+    },
+    "contact": {
+        "title": "Contact us :",
+        "formtitle": "Or on the contact form below:",
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "button": "Send"
+    },
+    "filter": {
+        "title": "Filters",
+        "type": "Property Type",
+        "bedroom": "Bedroom",
+        "state": "State",
+        "city": "City",
+        "target": "type",
+        "sale": "Sale",
+        "rent": "Rent",
+        "appartement": "Appartement",
+        "villa": "Villa",
+        "bathroom": "Bathroom",
+        "min": "Size (Min)",
+        "max": "Size (Max)",
+        "results": "results"
+    },
+    "property": {
+        "bedroom": "Bedroom",
+        "bathroom": "Bathroom",
+        "area": "Area",
+        "desc": "Description",
+        "call": "Call",
+        "sugg": "Suggestions"
+    },
+    "call":{
+        "phone": "Call us on our phone number",
+        "whatsapp": "Call us on Whatsapp"
+    } 
+}

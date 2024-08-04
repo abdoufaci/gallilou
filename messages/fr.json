@@ -1,0 +1,76 @@
+{
+    "Navigation": {
+       "properties": "Immobilier",
+       "about": "À propos",
+       "contact": "Contactez-nous",
+       "footer": "Nous sommes un pilier de l'industrie immobilière depuis plus de 6 ans. Nos racines sont profondes."
+    },
+    "banner": {
+       "Title": "Découvrez la maison de vos rêves",
+       "subTitle1": "Découvrez notre collection exclusive de propriétés immobilières de premier ordre",
+       "subTitle2": "Adapté à votre style de vie",
+       "button": "Découvrir maintenant"
+    },
+    "homeSearch": {
+       "any": "Quelconque",
+       "type": "Type d'immobilier",
+       "bedroom": "Chambre à coucher",
+       "location": "Localisation",
+       "button": "Rechercher des immobiliers"
+    },
+    "properties": {
+        "properties": "Immobilier",
+        "view": "Voir plus"
+    },
+    "card": {
+        "sale": "À vendre",
+        "rent": "A louer"
+    },
+    "about": {
+        "title": "A propos de Gallilou Immobilier",
+        "desc": "Nous sommes un pilier de l'industrie immobilière depuis plus de 11 ans. Notre expertise profondément enracinée et notre engagement inébranlable envers l'excellence ont fait de nous un nom de confiance sur le marché. Que vous achetiez, vendiez ou louiez, nous offrons des solutions personnalisées pour répondre à vos besoins uniques."
+    },
+    "selloffer": {
+        "title": "Avez-vous un immobilier à vendre ?",
+        "sub1": "Appelez-nous et ajoutez-le sur GALLILOU IMMOBILIER",
+        "sub2": "Nous nous occupons de tout, du service client jusqu'à la vente.",
+        "sub3": "Vente rapide",
+        "button": "Commencer"
+    },
+    "contact": {
+        "title": "Contactez-nous :",
+        "formtitle": "Ou sur le formulaire de contact ci-dessous :",
+        "name": "Nom",
+        "email": "E-mail",
+        "message": "Message",
+        "button": "Envoyer"
+    },
+    "filter": {
+        "title": "Filtres",
+        "type": "Type d'immobilier",
+        "bedroom": "Chambre à coucher",
+        "state": "Wilaya",
+        "city": "Ville",
+        "target": "type",
+        "sale": "vendre",
+        "rent": "louer",
+        "appartement": "Appartement",
+        "villa": "Villa",
+        "bathroom": "Bathroom",
+        "min": "Surface (min)",
+        "max": "Surface (max)",
+        "results": "résultats"
+    },
+    "property": {
+        "bedroom": "Chambre à coucher",
+        "bathroom": "Bathroom",
+        "area": "Surface",
+        "desc": "Description",
+        "call": "Appel",
+        "sugg": "Suggestions"
+    },
+    "call":{
+        "phone": "Appelez-nous sur notre numéro de téléphone",
+        "whatsapp": "Appelez-nous sur Whatsapp"
+    } 
+}
