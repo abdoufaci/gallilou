@@ -2,10 +2,12 @@ import Footer from "@/components/footer";
 import ClientFilter from "./_components/client-filter";
 import ClientPropertiesFeed from "./_components/client-properties-feed";
 import FilterButton from "./_components/filter-button";
+import { Analytics } from "@vercel/analytics/react";
 
 function PropertiesPage() {
   return (
     <div className="pt-56 w-[90%] mx-auto">
+      <Analytics />
       <div className="flex items-start gap-5">
         <div className="max-lg:hidden inline-block sticky top-36 left-0">
           <ClientFilter />

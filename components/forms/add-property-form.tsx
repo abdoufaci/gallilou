@@ -53,6 +53,7 @@ export const AddPropertyformSchema = z.object({
   bedroom: z.string(),
   location: z.string(),
   description: z.string(),
+  mapLink: z.string(),
 });
 
 export function AddPropertyForm() {
@@ -309,7 +310,24 @@ export function AddPropertyForm() {
             )}
           />
         </div>
-
+        <FormField
+          control={form.control}
+          name="mapLink"
+          render={({ field }) => (
+            <FormItem className="flex flex-col items-start  text-[#15091B]">
+              <FormLabel className="whitespace-nowrap  font-medium text-lg">
+                Map Link
+              </FormLabel>
+              <FormControl>
+                <Input
+                  {...field}
+                  className="w-full bg-white border border-[#443948B8] rounded-md"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <FormField
           control={form.control}
           name="location"

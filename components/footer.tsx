@@ -64,7 +64,9 @@ function Footer() {
             </Link>
             <Link
               target="_blank"
-              href={"https://www.instagram.com/gallilou_immobilier"}>
+              href={
+                "https://www.facebook.com/gallilouimmobilier/?locale=fr_FR"
+              }>
               <div className="rounded-full flex items-center justify-center h-10 w-10 bg-lightBrand/15">
                 <Image
                   alt="logo"
@@ -76,14 +78,14 @@ function Footer() {
             </Link>
             <Link
               target="_blank"
-              href={"https://www.instagram.com/gallilou_immobilier"}>
+              href={"https://www.tiktok.com/@gallilou_immobilier"}>
               <div className="rounded-full flex items-center justify-center h-10 w-10 bg-lightBrand/15">
                 <Image alt="logo" src={"/tiktok.svg"} height={15} width={15} />
               </div>
             </Link>
           </div>
         </div>
-        <div className="hidden md:flex flex-col gap-5">
+        <div className="hidden md:!flex flex-col gap-5">
           <div className="flex items-center gap-5">
             <div className="rounded-full flex items-center justify-center h-8 w-8 bg-lightBrand/15">
               <Phone className="w-4 h-4 text-brand" />
@@ -105,7 +107,7 @@ function Footer() {
               <Mail className="w-4 h-4 text-brand" />
             </div>
             <h1 className="text-[#484848] font-bold text-sm">
-              (+213) 553 88 71 99
+              Gallilou.yammi@gmail.com
             </h1>
           </div>
         </div>

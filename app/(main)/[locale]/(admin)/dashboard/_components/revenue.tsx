@@ -24,7 +24,7 @@ function Revenue({ revenue }: RevenueProps) {
         <DollarSign className="h-3.5 w-3.5 z-50" />
         <h1 className="z-50">Revenue</h1>
       </div>
-      <div className="flex h-[80%] items-center justify-center text-3xl sm:text-4xl md:text-5xl font-medium z-50">
+      <div className="flex h-[80%] items-center justify-center text-3xl md:text-4xl font-medium truncate z-50">
         <h1 className="z-50">{formatedRevenue}</h1>
       </div>
     </div>

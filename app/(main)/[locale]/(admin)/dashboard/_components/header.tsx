@@ -9,9 +9,9 @@ import DashboardDateFilter from "./dashboard-date-filter";
 async function Header() {
   return (
     <div className="w-[90%] mx-auto p-5">
-      <div className="flex gap-5 items-end sm:items-center justify-between">
+      <div className="flex gap-5 items-start lg:items-center justify-between">
         <div className="flex flex-wrap gap-5 flex-grow items-center justify-between">
-          <div className="flex items-center gap-16">
+          <div className="flex flex-wrap items-center gap-16">
             <Link className="flex items-center gap-5" href={"/"}>
               <Image alt="logo" src="/logo.png" height={40} width={40} />
               <h1 className="font-bold">
@@ -19,12 +19,16 @@ async function Header() {
                 <span className="text-brand font-normal">Immobilier</span>
               </h1>
             </Link>
-            <Navigation />
+            <div className="hidden md:!block">
+              <Navigation />
+            </div>
           </div>
           <DashboardDateFilter />
         </div>
-        <div className="flex items-center gap-5">
-          <UserButton afterSignOutUrl="/" />
+        <div className=" items-center gap-5 hidden md:!flex">
+          <div className=" mt-1.5">
+            <UserButton afterSignOutUrl="/" />
+          </div>
           <OpenInvite />
         </div>
       </div>

@@ -9,9 +9,9 @@ function Map() {
   return (
     <div
       id="contact"
-      className="w-[90%] mx-auto flex flex-col md:flex-row items-start gap-5 mt-36">
+      className="w-[90%] mx-auto flex flex-col md:!flex-row items-start gap-5 mt-36">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.2152116706616!2d3.1843482752990435!3d36.71739227236393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e51460f208447%3A0x721e027c34b6a0cf!2sROCDZ%20(%20Republic%20Of%20Computer%20Dz%20)!5e0!3m2!1sen!2sdz!4v1719079684958!5m2!1sen!2sdz"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3217.4650278098584!2d6.5599531!3d36.25248750000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f1776ecffd9595%3A0x5bfac9b03b9244e9!2sGallilou%20Immobilier!5e0!3m2!1sen!2sdz!4v1722871694961!5m2!1sen!2sdz"
         className="w-full h-[635px]"
         style={{
           border: "0px",

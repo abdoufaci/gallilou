@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Headset, HousePlus, Zap } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 function SellOffer() {
@@ -40,12 +41,14 @@ function SellOffer() {
             <h1>{t("sub3")} </h1>
           </div>
         </div>
-        <Button
-          size={"lg"}
-          variant={"brand"}
-          className="h-11 w-48 rounded-sm  font-normal text-lg">
-          {t("button")}
-        </Button>
+        <Link target="_blank" href={"https://Wa.me/+213770711163"}>
+          <Button
+            size={"lg"}
+            variant={"brand"}
+            className="h-11 w-48 rounded-sm  font-normal text-lg">
+            {t("button")}
+          </Button>
+        </Link>
       </div>
       <div className="relative">
         <Image

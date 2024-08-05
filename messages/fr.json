@@ -67,7 +67,8 @@
         "area": "Surface",
         "desc": "Description",
         "call": "Appel",
-        "sugg": "Suggestions"
+        "sugg": "Suggestions",
+       "location": "Localisation"
     },
     "call":{
         "phone": "Appelez-nous sur notre numéro de téléphone",

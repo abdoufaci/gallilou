@@ -5,10 +5,12 @@ import Banner from "./_components/banner";
 import { HomeSearch } from "./_components/home-search";
 import SellOffer from "./_components/sell-offer";
 import Map from "./_components/map";
+import { Analytics } from "@vercel/analytics/react";
 
 function ClientPage() {
   return (
     <div>
+      <Analytics />
       <Banner />
       <HomeSearch />
       <HomePropertiesFeed />

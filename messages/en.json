@@ -67,7 +67,8 @@
         "area": "Area",
         "desc": "Description",
         "call": "Call",
-        "sugg": "Suggestions"
+        "sugg": "Suggestions",
+       "location": "Location"
     },
     "call":{
         "phone": "Call us on our phone number",

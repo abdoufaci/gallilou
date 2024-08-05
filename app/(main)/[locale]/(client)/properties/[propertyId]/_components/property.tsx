@@ -14,7 +14,7 @@ function Property({ property }: TravelProps) {
   const t = useTranslations("property");
 
   return (
-    <div className="flex flex-col lg:flex-row items-start gap-16 w-full mx-auto">
+    <div className="flex flex-col lg:!flex-row items-start gap-16 w-full mx-auto">
       <ImageCarousel images={property?.images} />
       <div className="space-y-10 w-full max-w-[679.28px]">
         <div className="space-y-7">
@@ -25,9 +25,6 @@ function Property({ property }: TravelProps) {
             <h1 className="text-[#15091B] text-2xl font-bold">
               {property?.location}
             </h1>
-            <h3 className="text-[#66717E] whitespace-break-spaces">
-              {property?.description}
-            </h3>
           </div>
           <div className="w-full grid grid-cols-3 ">
             <div className="space-y-3">
@@ -76,7 +73,7 @@ function Property({ property }: TravelProps) {
               </h1>
             </div>
           </div>
-          <PropertyAction />
+          <PropertyAction property={property} />
         </div>
       </div>
     </div>

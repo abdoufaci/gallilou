@@ -84,3 +84,8 @@
 .searchShadow {
   box-shadow: 6.45px 8.6px 8.6px 0px #00000021;
 }
+
+.dashboardfootershadow {
+  box-shadow: 0px 4.92px 9.35px 0px #FCB70759;
+  box-shadow: 0px -1.23px 13.65px 0px #FCB70770;
+}

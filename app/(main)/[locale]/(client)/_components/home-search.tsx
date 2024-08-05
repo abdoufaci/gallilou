@@ -74,110 +74,118 @@ export function HomeSearch() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="flex flex-wrap gap-5 justify-center transform translate-y-[-50%] items-center bg-white searchShadow p-5 px-10 rounded-md w-fit">
-          <FormField
-            control={form.control}
-            name="type"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="whitespace-nowrap text-[#15091B] font-medium text-sm">
-                  {t("type")}
-                </FormLabel>
-                <Select onValueChange={field.onChange}>
-                  <FormControl>
-                    <SelectTrigger className="w-[150px] focus-visible:ring-0 bg-white ">
-                      <SelectValue placeholder={t("any")} />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectItem value={PropertyType.APARTEMENT}>
-                        Appartement
-                      </SelectItem>
-                      <SelectItem value={PropertyType.VILLA}>Villa</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Separator
-            className=" bg-[#15091B] w-0.5 rounded-full h-[73.97px]"
-            orientation="vertical"
-          />
-          <FormField
-            control={form.control}
-            name="bedroom"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="whitespace-nowrap text-[#15091B] font-medium text-sm">
-                  {t("bedroom")}
-                </FormLabel>
-                <Select onValueChange={field.onChange}>
-                  <FormControl>
-                    <SelectTrigger className="w-[150px] focus-visible:ring-0 bg-white ">
-                      <SelectValue placeholder={t("any")} />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectItem value={"1"}>1</SelectItem>
-                      <SelectItem value={"2"}>2</SelectItem>
-                      <SelectItem value={"3"}>3</SelectItem>
-                      <SelectItem value={"4"}>4</SelectItem>
-                      <SelectItem value={"5"}>5</SelectItem>
-                      <SelectItem value={"6"}>6</SelectItem>
-                      <SelectItem value={"7"}>7</SelectItem>
-                      <SelectItem value={"8"}>8</SelectItem>
-                      <SelectItem value={"9"}>9</SelectItem>
-                      <SelectItem value={"10"}>10</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Separator
-            className=" bg-[#15091B] w-0.5 rounded-full h-[73.97px]"
-            orientation="vertical"
-          />
-          <FormField
-            control={form.control}
-            name="wilaya"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="whitespace-nowrap text-[#15091B] font-medium text-sm">
-                  {t("location")}
-                </FormLabel>
-                <Select onValueChange={field.onChange}>
-                  <FormControl>
-                    <SelectTrigger className="w-[150px] focus-visible:ring-0 bg-white ">
-                      <SelectValue placeholder={t("any")} />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectGroup>
-                      {wilayas.map((wilaya, idx) => (
-                        <SelectItem key={idx} value={wilaya.name}>
-                          {wilaya.name}
+          className="grid grid-cols-1 min-[380px]:!grid-cols-2 md:!grid-cols-4 gap-5 justify-center transform translate-y-[-50%] items-center bg-white searchShadow p-5 px-10 rounded-md w-fit">
+          <div className="flex items-center gap-5">
+            <FormField
+              control={form.control}
+              name="type"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="whitespace-nowrap text-[#15091B] font-medium text-sm">
+                    {t("type")}
+                  </FormLabel>
+                  <Select onValueChange={field.onChange}>
+                    <FormControl>
+                      <SelectTrigger className="w-[150px] focus-visible:ring-0 bg-white ">
+                        <SelectValue placeholder={t("any")} />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectItem value={PropertyType.APARTEMENT}>
+                          Appartement
                         </SelectItem>
-                      ))}
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Separator
-            className=" bg-[#15091B] w-0.5 rounded-full h-[73.97px]"
-            orientation="vertical"
-          />
+                        <SelectItem value={PropertyType.VILLA}>
+                          Villa
+                        </SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Separator
+              className=" bg-[#15091B] w-0.5 rounded-full h-[73.97px]"
+              orientation="vertical"
+            />
+          </div>
+          <div className="flex items-center gap-5">
+            <FormField
+              control={form.control}
+              name="bedroom"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="whitespace-nowrap text-[#15091B] font-medium text-sm">
+                    {t("bedroom")}
+                  </FormLabel>
+                  <Select onValueChange={field.onChange}>
+                    <FormControl>
+                      <SelectTrigger className="w-[150px] focus-visible:ring-0 bg-white ">
+                        <SelectValue placeholder={t("any")} />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectItem value={"1"}>1</SelectItem>
+                        <SelectItem value={"2"}>2</SelectItem>
+                        <SelectItem value={"3"}>3</SelectItem>
+                        <SelectItem value={"4"}>4</SelectItem>
+                        <SelectItem value={"5"}>5</SelectItem>
+                        <SelectItem value={"6"}>6</SelectItem>
+                        <SelectItem value={"7"}>7</SelectItem>
+                        <SelectItem value={"8"}>8</SelectItem>
+                        <SelectItem value={"9"}>9</SelectItem>
+                        <SelectItem value={"10"}>10</SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Separator
+              className=" bg-[#15091B] w-0.5 rounded-full h-[73.97px]"
+              orientation="vertical"
+            />
+          </div>
+          <div className="flex items-center gap-5">
+            <FormField
+              control={form.control}
+              name="wilaya"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="whitespace-nowrap text-[#15091B] font-medium text-sm">
+                    {t("location")}
+                  </FormLabel>
+                  <Select onValueChange={field.onChange}>
+                    <FormControl>
+                      <SelectTrigger className="w-[150px] focus-visible:ring-0 bg-white ">
+                        <SelectValue placeholder={t("any")} />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectGroup>
+                        {wilayas.map((wilaya, idx) => (
+                          <SelectItem key={idx} value={wilaya.name}>
+                            {wilaya.name}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Separator
+              className=" bg-[#15091B] w-0.5 rounded-full h-[73.97px]"
+              orientation="vertical"
+            />
+          </div>
           <Button
             size={"lg"}
-            className="h-12 px-10 rounded-sm bg-brand/90 hover:bg-brand text-white font-normal text-lg">
+            className="h-12 px-5 md:!px-10 rounded-sm bg-brand/90 hover:bg-brand text-white font-normal text-lg">
             {t("button")}
           </Button>
         </form>

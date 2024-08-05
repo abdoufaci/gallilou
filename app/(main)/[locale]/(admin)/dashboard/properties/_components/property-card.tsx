@@ -22,7 +22,7 @@ function PropertyCard({ property, isClient = false }: PropertyCardProps) {
     <div
       onClick={() => !isClient && onOpen("propertyDetails", { property })}
       className={cn(
-        "flex flex-col w-full rounded-[3.27px] propertyCardShadow h-[500px] max-w-sm bg-white relative",
+        "flex flex-col w-full rounded-[3.27px] propertyCardShadow h-[450px] max-w-sm bg-white relative",
         !isClient && "cursor-pointer"
       )}>
       {property?.isSold && (
@@ -60,7 +60,6 @@ function PropertyCard({ property, isClient = false }: PropertyCardProps) {
           </div>
         </div>
         <h1 className="text-xl font-bold">{property?.location}</h1>
-        <h3 className="text-sm text-[#4D515B] ">{property?.description}</h3>
         <div className="w-full grid grid-cols-3 ">
           <div className="flex items-center gap-3 text-[#15091B] font-semibold">
             <BedDouble className="h-4 w-4" />

@@ -17,7 +17,7 @@ function ClientHeader() {
           </h1>
         </Link>
         <div className="flex items-center gap-10">
-          <div className="hidden md:block">
+          <div className="hidden md:!block">
             <ClientNavigation />
           </div>
           <LangNavigation />

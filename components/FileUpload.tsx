@@ -45,7 +45,7 @@ export const FileUpload = ({
   });
 
   return (
-    <ScrollArea className="w-full max-w-[450px]">
+    <ScrollArea className="w-full max-w-[350px] md:!max-w-[450px]">
       {!!value?.length && value?.length > 1 && (
         <h1
           onClick={() =>

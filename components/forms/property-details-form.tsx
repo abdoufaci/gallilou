@@ -54,6 +54,7 @@ export const PropertyDetailsformSchema = z.object({
   bedroom: z.string(),
   location: z.string(),
   description: z.string(),
+  mapLink: z.string(),
 });
 
 export function PropertyDetailsForm() {
@@ -78,6 +79,7 @@ export function PropertyDetailsForm() {
       size: `${property?.size}`,
       type: property?.type,
       wilaya: property?.wilaya,
+      mapLink: property?.mapLink,
     },
   });
 
@@ -114,6 +116,7 @@ export function PropertyDetailsForm() {
       size: property?.size,
       type: property?.type,
       wilaya: property?.wilaya,
+      mapLink: property?.mapLink,
     };
 
     const changedValues = Object.keys(currentValues).reduce((acc, key) => {
@@ -155,7 +158,7 @@ export function PropertyDetailsForm() {
             name="images"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="whitespace-nowrap text-gray-sub-300 text-sm font-medium">
+                <FormLabel className="whitespace-nowrap  text-sm font-medium">
                   Property photos
                 </FormLabel>
                 <FormControl>
@@ -212,7 +215,7 @@ export function PropertyDetailsForm() {
               name="type"
               render={({ field }) => (
                 <FormItem className="space-y-3">
-                  <FormLabel className="whitespace-nowrap text-gray-sub-300 font-medium text-lg">
+                  <FormLabel className="whitespace-nowrap  font-medium text-lg">
                     Property Type
                   </FormLabel>
                   <Select
@@ -243,7 +246,7 @@ export function PropertyDetailsForm() {
               name="size"
               render={({ field }) => (
                 <FormItem className="flex flex-col items-start text-[#15091B]">
-                  <FormLabel className="whitespace-nowrap text-gray-sub-300 font-medium text-lg">
+                  <FormLabel className="whitespace-nowrap  font-medium text-lg">
                     Area Size{" "}
                     <span className="text-xs text-gray-500">(m²)</span>
                   </FormLabel>
@@ -265,7 +268,7 @@ export function PropertyDetailsForm() {
               name="wilaya"
               render={({ field }) => (
                 <FormItem className="space-y-3">
-                  <FormLabel className="whitespace-nowrap text-gray-sub-300 font-medium text-lg">
+                  <FormLabel className="whitespace-nowrap  font-medium text-lg">
                     State
                   </FormLabel>
                   <Select
@@ -295,7 +298,7 @@ export function PropertyDetailsForm() {
               name="city"
               render={({ field }) => (
                 <FormItem className="flex flex-col items-start  text-[#15091B]">
-                  <FormLabel className="whitespace-nowrap text-gray-sub-300 font-medium text-lg">
+                  <FormLabel className="whitespace-nowrap  font-medium text-lg">
                     City
                   </FormLabel>
                   <FormControl>
@@ -313,7 +316,7 @@ export function PropertyDetailsForm() {
               name="bedroom"
               render={({ field }) => (
                 <FormItem className="space-y-3">
-                  <FormLabel className="whitespace-nowrap text-gray-sub-300 font-medium text-lg">
+                  <FormLabel className="whitespace-nowrap  font-medium text-lg">
                     Bedroom
                   </FormLabel>
                   <Select
@@ -348,7 +351,7 @@ export function PropertyDetailsForm() {
               name="bathroom"
               render={({ field }) => (
                 <FormItem className="space-y-3">
-                  <FormLabel className="whitespace-nowrap text-gray-sub-300 font-medium text-lg">
+                  <FormLabel className="whitespace-nowrap  font-medium text-lg">
                     Bathroom
                   </FormLabel>
                   <Select
@@ -379,13 +382,30 @@ export function PropertyDetailsForm() {
               )}
             />
           </div>
-
+          <FormField
+            control={form.control}
+            name="mapLink"
+            render={({ field }) => (
+              <FormItem className="flex flex-col items-start  text-[#15091B]">
+                <FormLabel className="whitespace-nowrap  font-medium text-lg">
+                  Map Link
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    {...field}
+                    className="w-full bg-white border border-[#443948B8] rounded-md"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name="location"
             render={({ field }) => (
               <FormItem className="flex flex-col items-start  text-[#15091B]">
-                <FormLabel className="whitespace-nowrap text-gray-sub-300 font-medium text-lg">
+                <FormLabel className="whitespace-nowrap  font-medium text-lg">
                   Location
                 </FormLabel>
                 <FormControl>
@@ -403,7 +423,7 @@ export function PropertyDetailsForm() {
             name="description"
             render={({ field }) => (
               <FormItem className="flex flex-col items-start gap-2">
-                <FormLabel className="whitespace-nowrap text-gray-sub-300 text-lg font-medium">
+                <FormLabel className="whitespace-nowrap  text-lg font-medium">
                   Description
                 </FormLabel>
                 <FormControl>

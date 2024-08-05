@@ -34,6 +34,7 @@ model Property {
   bedroom      String
   bathroom     String
   location     String
+  mapLink      String       @default("https://maps.app.goo.gl/5s9Aj1u1husPh9ck9")
   description  String       @db.Text
   target       PropertyFor
   profit       Int          @default(0)

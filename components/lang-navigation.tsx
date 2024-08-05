@@ -53,20 +53,6 @@ function LangNavigation() {
             <h3>FR</h3>
           </div>
         </Link>
-        <Link
-          href={
-            local === "fr"
-              ? pathname.replace("fr", "ar")
-              : local === "en"
-              ? pathname.replace("en", "ar")
-              : pathname.replace("ar", "ar")
-          }>
-          <div
-            className="flex items-center gap-2 text-black font-medium cursor-pointer p-1 rounded hover:bg-black/5 transition-all 
-          duration-200 text-sm">
-            <h3>AR</h3>
-          </div>
-        </Link>
       </PopoverContent>
     </Popover>
   );
