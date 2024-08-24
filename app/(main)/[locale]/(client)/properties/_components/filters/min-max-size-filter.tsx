@@ -54,8 +54,10 @@ export function MinMaxSizeFilter() {
   const form = useForm<z.infer<typeof MinMaxSizeFilterSchema>>({
     resolver: zodResolver(MinMaxSizeFilterSchema),
     defaultValues: {
-      min: clientPropertyData.minSize,
-      max: clientPropertyData.maxSize,
+      //@ts-ignore
+      min: `${clientPropertyData.minSize}`,
+      //@ts-ignore
+      max: `${clientPropertyData.maxSize}`,
     },
   });
 
@@ -101,6 +103,7 @@ export function MinMaxSizeFilter() {
               <FormControl>
                 <Input
                   type="number"
+                  placeholder="Any"
                   {...field}
                   className=" focus-visible:ring-0 bg-white border border-[#443948B8] w-[150px] rounded-full
                     [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none 
@@ -121,6 +124,7 @@ export function MinMaxSizeFilter() {
               </FormLabel>
               <FormControl>
                 <Input
+                  placeholder="Any"
                   type="number"
                   {...field}
                   className=" focus-visible:ring-0 bg-white border border-[#443948B8] w-[150px] rounded-full

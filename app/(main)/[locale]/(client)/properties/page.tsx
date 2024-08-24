@@ -9,11 +9,11 @@ function PropertiesPage() {
     <div className="pt-56 w-[90%] mx-auto">
       <Analytics />
       <div className="flex items-start gap-5">
-        <div className="max-lg:hidden inline-block sticky top-36 left-0">
+        <div className="max-lg:!hidden inline-block sticky top-36 left-0">
           <ClientFilter />
         </div>
         <div className="space-y-5 w-full">
-          <div className="w-full bg-white z-50 p-5 sticky top-32 left-0 flex justify-end lg:hidden">
+          <div className="w-full bg-white z-50 p-5 sticky top-32 left-0 flex justify-end lg:!hidden">
             <FilterButton />
           </div>
           <ClientPropertiesFeed />

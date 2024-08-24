@@ -12,6 +12,7 @@ import { InviteForm } from "../forms/Invite-user-form";
 import { AddPropertyForm } from "../forms/add-property-form";
 import { ScrollArea } from "../ui/scroll-area";
 import ClientFilter from "@/app/(main)/[locale]/(client)/properties/_components/client-filter";
+import { Button } from "../ui/button";
 
 export const ClientFilterModal = () => {
   const { isOpen, onClose, type } = useModal();
@@ -24,6 +25,13 @@ export const ClientFilterModal = () => {
         <DialogTitle className="hidden">Property filter</DialogTitle>
         <ScrollArea className="h-[550px]">
           <ClientFilter />
+          <Button
+            onClick={() => onClose()}
+            className="w-full mt-7"
+            variant={"brand"}
+            size={"lg"}>
+            Filter
+          </Button>
         </ScrollArea>
       </DialogContent>
     </Dialog>

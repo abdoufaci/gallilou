@@ -112,9 +112,14 @@ function Footer() {
           </div>
         </div>
       </div>
-      <h1 className="text-center text-[#585858]">
-        © 2024 GALILLOU IMMOBILER. All rights reserved.
-      </h1>
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="text-center text-[#585858]">
+          © 2024 GALILLOU IMMOBILER. All rights reserved.
+        </h1>
+        <Link target="_blank" href={"https://linktr.ee/Kotzex"}>
+          <h1 className="font-medium text-lg">By Kotzex</h1>
+        </Link>
+      </div>
     </div>
   );
 }

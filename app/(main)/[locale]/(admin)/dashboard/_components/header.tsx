@@ -25,8 +25,8 @@ async function Header() {
           </div>
           <DashboardDateFilter />
         </div>
-        <div className=" items-center gap-5 hidden md:!flex">
-          <div className=" mt-1.5">
+        <div className="flex items-center gap-5 ">
+          <div className="hidden md:!flex mt-1.5">
             <UserButton afterSignOutUrl="/" />
           </div>
           <OpenInvite />

@@ -82,7 +82,7 @@ function DashboardDateFilter() {
     );
   }
 
-  if (pathname.includes("/dashboard"))
+  if (pathname === "/fr/dashboard" || pathname === "/en/dashboard")
     return (
       <Form {...form}>
         <div className="flex items-start justify-between">

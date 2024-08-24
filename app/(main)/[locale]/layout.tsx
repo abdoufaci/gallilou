@@ -2,9 +2,21 @@ import { ModalProvider } from "@/providers/modal-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Outfit } from "next/font/google";
+import { Metadata } from "next";
+import "../../globals.css";
 
 const outfit = Outfit({ subsets: ["latin"] });
-import "../../globals.css";
+
+export const metadata: Metadata = {
+  title: "Gallilou Immobilier",
+  description: "Discover Your Dream Home",
+  icons: [
+    {
+      url: "/logo.png",
+      href: "/logo.png",
+    },
+  ],
+};
 
 export default async function LocaleLayout({
   children,

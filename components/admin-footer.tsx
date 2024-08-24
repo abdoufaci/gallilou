@@ -11,7 +11,7 @@ function AdminFooter() {
   const pathname = usePathname();
 
   return (
-    <div className="bg-black w-[90%] max-w-[419px] mx-auto hidden max-md:!flex rounded-2xl p-4 pb-0 justify-between items-start gap-5 sticky bottom-5 left-0">
+    <div className="bg-black z-50 w-[90%] max-w-[419px] mx-auto hidden max-md:!flex rounded-2xl p-4 pb-0 justify-between items-start gap-5 sticky bottom-5 left-0">
       <Link href={"/dashboard"}>
         <div
           className={cn(
@@ -65,8 +65,6 @@ function AdminFooter() {
             },
           }}
         />
-
-        <OpenInvite />
       </div>
     </div>
   );

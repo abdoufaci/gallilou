@@ -74,7 +74,7 @@ export function HomeSearch() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="grid grid-cols-1 min-[380px]:!grid-cols-2 md:!grid-cols-4 gap-5 justify-center transform translate-y-[-50%] items-center bg-white searchShadow p-5 px-10 rounded-md w-fit">
+          className="grid grid-cols-1 min-[380px]:!grid-cols-2 md:!grid-cols-4 gap-5 justify-center transform translate-y-[-50%] items-center bg-white searchShadow p-5 px-5 sm:px-10 rounded-md w-fit">
           <div className="flex items-center gap-5">
             <FormField
               control={form.control}
@@ -185,7 +185,7 @@ export function HomeSearch() {
           </div>
           <Button
             size={"lg"}
-            className="h-12 px-5 md:!px-10 rounded-sm bg-brand/90 hover:bg-brand text-white font-normal text-lg">
+            className="min-h-12 h-fit whitespace-break-spaces px-5 md:!px-10 rounded-sm bg-brand/90 hover:bg-brand text-white font-normal text-lg">
             {t("button")}
           </Button>
         </form>

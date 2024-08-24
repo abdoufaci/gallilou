@@ -334,7 +334,7 @@ export function AddPropertyForm() {
           render={({ field }) => (
             <FormItem className="flex flex-col items-start  text-[#15091B]">
               <FormLabel className="whitespace-nowrap  font-medium text-lg">
-                Location
+                Title
               </FormLabel>
               <FormControl>
                 <Input

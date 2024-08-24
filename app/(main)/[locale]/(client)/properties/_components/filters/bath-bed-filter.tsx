@@ -106,7 +106,7 @@ export function BedBathFilter() {
               <Select defaultValue={field.value} onValueChange={field.onChange}>
                 <FormControl>
                   <SelectTrigger className="w-[150px] rounded-full focus-visible:ring-0 bg-white border border-[#443948B8]">
-                    <SelectValue />
+                    <SelectValue placeholder="Any" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -139,7 +139,7 @@ export function BedBathFilter() {
               <Select onValueChange={field.onChange}>
                 <FormControl>
                   <SelectTrigger className="w-[150px] rounded-full focus-visible:ring-0 bg-white border border-[#443948B8]">
-                    <SelectValue />
+                    <SelectValue placeholder="Any" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>

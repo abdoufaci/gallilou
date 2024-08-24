@@ -18,11 +18,15 @@ function PropertyCard({ property, isClient = false }: PropertyCardProps) {
 
   const t = useTranslations("card");
 
+  const truncate = (string: string, n: number) => {
+    return string?.length > n ? string.substr(0, n - 1) + "..." : string;
+  };
+
   return (
     <div
       onClick={() => !isClient && onOpen("propertyDetails", { property })}
       className={cn(
-        "flex flex-col w-full rounded-[3.27px] propertyCardShadow h-[450px] max-w-sm bg-white relative",
+        "flex flex-col w-full rounded-[3.27px] propertyCardShadow h-[470px] max-w-sm bg-white relative",
         !isClient && "cursor-pointer"
       )}>
       {property?.isSold && (
@@ -45,21 +49,28 @@ function PropertyCard({ property, isClient = false }: PropertyCardProps) {
           className="object-cover w-full h-full rounded-[3.27px]"
         />
       </div>
-      <div className="w-full p-4 space-y-3">
-        <div className="flex items-center justify-between">
-          <h1 className="text-[#4D515B] text-sm font-semibold">
-            {property?.wilaya}, {property?.city}
-          </h1>
-          <div className="flex items-center gap-2 px-4 py-0.5 text-xs rounded-full border border-[#7F369F] text-[#7F369F]">
-            <div
-              className={cn(
-                "h-2 w-2 rounded-full",
-                property?.target === "RENT" ? "bg-[#D6A319]" : "bg-[#2BC194]"
-              )}></div>
-            <h1>{property?.target === "RENT" ? t("rent") : t("sale")}</h1>
+      <div className="w-full p-4 space-y-3 flex flex-col justify-between h-full">
+        <div className="space-y-3">
+          <div className="flex items-center justify-between">
+            <h1 className="text-[#4D515B] text-sm font-semibold">
+              {property?.wilaya}, {property?.city}
+            </h1>
+            <div className="flex items-center gap-2 px-4 py-0.5 text-xs rounded-full border border-[#7F369F] text-[#7F369F]">
+              <div
+                className={cn(
+                  "h-2 w-2 rounded-full",
+                  property?.target === "RENT" ? "bg-[#D6A319]" : "bg-[#2BC194]"
+                )}></div>
+              <h1>{property?.target === "RENT" ? t("rent") : t("sale")}</h1>
+            </div>
+          </div>
+          <div className="space-y-1">
+            <h1 className="text-xl font-bold">{property?.location}</h1>
+            <h3 className="text-[#4D515B] text-sm">
+              {truncate(property?.description || "", 50)}
+            </h3>
           </div>
         </div>
-        <h1 className="text-xl font-bold">{property?.location}</h1>
         <div className="w-full grid grid-cols-3 ">
           <div className="flex items-center gap-3 text-[#15091B] font-semibold">
             <BedDouble className="h-4 w-4" />

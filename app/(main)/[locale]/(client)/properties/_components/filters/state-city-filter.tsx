@@ -104,7 +104,7 @@ export function StateCityFilter() {
               <Select defaultValue={field.value} onValueChange={field.onChange}>
                 <FormControl>
                   <SelectTrigger className="w-[150px] rounded-full focus-visible:ring-0 bg-white border border-[#443948B8]">
-                    <SelectValue />
+                    <SelectValue placeholder="Any" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -132,6 +132,7 @@ export function StateCityFilter() {
               <FormControl>
                 <Input
                   {...field}
+                  placeholder="Any"
                   className="w-[150px] bg-white border border-[#443948B8] rounded-full"
                 />
               </FormControl>
