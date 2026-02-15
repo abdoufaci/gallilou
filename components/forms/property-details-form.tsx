@@ -42,6 +42,7 @@ export const PropertyDetailsformSchema = z.object({
       z.object({
         url: z.string(),
         key: z.string(),
+        type: z.string(),
       })
     )
     .nonempty("one image at least is required ."),

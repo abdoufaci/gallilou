@@ -1,6 +1,6 @@
 "use client";
 
-import { XIcon } from "lucide-react";
+import { Play, XIcon } from "lucide-react";
 import Image from "next/image";
 
 import "@uploadthing/react/styles.css";
@@ -12,6 +12,7 @@ import { ElementRef, useRef } from "react";
 import { Button } from "./ui/button";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 import { deleteFiles } from "@/actions/mutations/delete-file";
+import ReactPlayer from "react-player";
 
 interface FileUploadProps {
   onChange: (url?: any[]) => void;
@@ -56,32 +57,73 @@ export const FileUpload = ({
         </h1>
       )}
       <div className="flex items-center gap-2">
-        {value?.map((image: any, idx) => (
-          <div key={idx} className="w-[250px] h-[244px] relative">
-            <Image
-              key={image.key}
-              alt="image"
-              src={image.url || ""}
-              height={600}
-              width={300}
-              className="rounded-lg w-full h-full object-cover"
-            />
-            <XIcon
-              className="h-8 w-8 text-[#66717E] bg-[#66717E]/50 rounded-full p-1.5 cursor-pointer absolute top-2 right-2"
-              onClick={() =>
-                type?.endsWith("Details")
-                  ? onChange(value?.filter((value) => value.key != image.key))
-                  : mutate([image])
-              }
-            />
-          </div>
-        ))}
+        {value?.map(
+          (
+            image: {
+              url: string;
+              type: string;
+              key: string;
+            },
+            idx
+          ) =>
+            image.type.startsWith("video") ? (
+              <div key={image.key} className="w-full h-full relative">
+                <ReactPlayer
+                  config={{
+                    file: {
+                      attributes: {
+                        controlsList: "nodownload noplaybackrate",
+                      },
+                    },
+                  }}
+                  controls
+                  disablePictureInPicture
+                  url={image.url || ""}
+                  height={250}
+                  width={400}
+                />
+                <XIcon
+                  className="h-8 w-8 text-[#66717E] bg-[#66717E]/50 rounded-full p-1.5 cursor-pointer absolute top-2 right-2"
+                  onClick={() =>
+                    type?.endsWith("Details")
+                      ? onChange(
+                          value?.filter((value) => value.key != image.key)
+                        )
+                      : mutate([image])
+                  }
+                />
+              </div>
+            ) : (
+              <div key={idx} className="w-[250px] h-[244px] relative">
+                <Image
+                  key={image.key}
+                  alt="image"
+                  src={image.url || ""}
+                  height={600}
+                  width={300}
+                  className="rounded-lg w-full h-full object-cover"
+                />
+
+                <XIcon
+                  className="h-8 w-8 text-[#66717E] bg-[#66717E]/50 rounded-full p-1.5 cursor-pointer absolute top-2 right-2"
+                  onClick={() =>
+                    type?.endsWith("Details")
+                      ? onChange(
+                          value?.filter((value) => value.key != image.key)
+                        )
+                      : mutate([image])
+                  }
+                />
+              </div>
+            )
+        )}
         <UploadDropzone
           endpoint={endpoint}
           onClientUploadComplete={(res) => {
             const convertedRes = res.map((res) => ({
               url: res.url,
               key: res.key,
+              type: res.type,
             }));
             onChange([...(value ?? []), ...convertedRes]);
           }}

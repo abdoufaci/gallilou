@@ -1,6 +1,7 @@
 import { Outfit } from "next/font/google";
 import Header from "./_components/header";
 import AdminFooter from "@/components/admin-footer";
+import "@/app/globals.css";
 
 const outfit = Outfit({ subsets: ["latin"] });
 

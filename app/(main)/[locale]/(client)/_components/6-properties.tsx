@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useAdminPropertiesQuery } from "@/hooks/use-query-admin-properties";
@@ -13,6 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { useTranslations } from "next-intl";
 
 function HomePropertiesFeed() {
+  const [playing, setPlaying] = useState("");
   const t = useTranslations("properties");
 
   const { data: properties, isPending } = fetch6Properties();
@@ -36,7 +37,12 @@ function HomePropertiesFeed() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
           {properties?.map((property, idx) => (
             <Link key={idx} href={`/properties/${property.id}`}>
-              <PropertyCard isClient property={property} />
+              <PropertyCard
+                isClient
+                property={property}
+                playing={playing === property.id}
+                setPlaying={setPlaying}
+              />
             </Link>
           ))}
         </div>

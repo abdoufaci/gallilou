@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useAdminPropertiesQuery } from "@/hooks/use-query-admin-properties";
@@ -10,6 +10,7 @@ import { useInView } from "react-intersection-observer";
 import PropertyCard from "./property-card";
 
 function PropertiesFeed() {
+  const [playing, setPlaying] = useState("");
   const pathname = usePathname();
 
   const {
@@ -42,7 +43,12 @@ function PropertiesFeed() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 place-items-center">
           {properties?.pages.map((page) =>
             page?.properties.map((property, idx) => (
-              <PropertyCard key={idx} property={property} />
+              <PropertyCard
+                key={idx}
+                property={property}
+                playing={playing === property.id}
+                setPlaying={setPlaying}
+              />
             ))
           )}
         </div>

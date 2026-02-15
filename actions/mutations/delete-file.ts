@@ -10,10 +10,6 @@ export const deleteFiles = async (
 ) => {
   const convertedData = filesIds.map((file) => file.key);
 
-  console.log({
-    convertedData,
-  });
-
   try {
     await utapi.deleteFiles(convertedData);
     return convertedData;

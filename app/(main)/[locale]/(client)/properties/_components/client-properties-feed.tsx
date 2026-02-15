@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useAdminPropertiesQuery } from "@/hooks/use-query-admin-properties";
@@ -13,6 +13,7 @@ import { useFilterModal } from "@/hooks/use-filter-modal-store";
 import { useTranslations } from "next-intl";
 
 function ClientPropertiesFeed() {
+  const [playing, setPlaying] = useState("");
   const pathname = usePathname();
 
   const { clientPropertyData } = useFilterModal();
@@ -68,7 +69,12 @@ function ClientPropertiesFeed() {
                 key={idx}
                 href={`/properties/${property.id}`}
                 className="w-full">
-                <PropertyCard isClient property={property} />
+                <PropertyCard
+                  isClient
+                  property={property}
+                  playing={playing === property.id}
+                  setPlaying={setPlaying}
+                />
               </Link>
             ))
           )}

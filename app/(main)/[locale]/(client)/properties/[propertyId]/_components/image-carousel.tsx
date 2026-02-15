@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -9,6 +11,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Prisma } from "@prisma/client";
 import Image from "next/image";
+import ReactPlayer from "react-player";
 
 interface ImageCarouselProps {
   images?: Prisma.JsonValue[];
@@ -24,18 +27,41 @@ function ImageCarousel({ images }: ImageCarouselProps) {
           <CarouselItem key={index} className="w-full ">
             <Card className="w-full">
               <CardContent className="flex flex-col h-[600px] items-center justify-center p-6 w-full">
-                <Image
-                  alt="travel"
-                  src={
-                    //@ts-ignore
-                    image.url || ""
-                  }
-                  height={600}
-                  width={600}
-                  quality={100}
-                  objectFit="cover"
-                  className="w-full h-full object-cover"
-                />
+                {
+                  //@ts-ignore
+                  image?.type && image?.type.startsWith("video") ? (
+                    <ReactPlayer
+                      config={{
+                        file: {
+                          attributes: {
+                            controlsList: "nodownload noplaybackrate",
+                          },
+                        },
+                      }}
+                      controls
+                      disablePictureInPicture
+                      url={
+                        //@ts-ignore
+                        image.url || ""
+                      }
+                      height={600}
+                      width={"100%"}
+                    />
+                  ) : (
+                    <Image
+                      alt="travel"
+                      src={
+                        //@ts-ignore
+                        image.url || ""
+                      }
+                      height={600}
+                      width={600}
+                      quality={100}
+                      objectFit="cover"
+                      className="w-full h-full object-cover"
+                    />
+                  )
+                }
               </CardContent>
             </Card>
           </CarouselItem>

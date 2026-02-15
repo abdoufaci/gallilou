@@ -6,13 +6,22 @@ import { Prisma, Property } from "@prisma/client";
 import { Bath, BedDouble, Scan } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { Dispatch, SetStateAction, useState } from "react";
+import ReactPlayer from "react-player";
 
 interface PropertyCardProps {
   property: Property | null;
   isClient?: boolean;
+  playing: boolean;
+  setPlaying: Dispatch<SetStateAction<string>>;
 }
 
-function PropertyCard({ property, isClient = false }: PropertyCardProps) {
+function PropertyCard({
+  property,
+  isClient = false,
+  playing,
+  setPlaying,
+}: PropertyCardProps) {
   const { onOpen } = useModal();
   const images = property?.images as Prisma.JsonArray;
 
@@ -24,6 +33,8 @@ function PropertyCard({ property, isClient = false }: PropertyCardProps) {
 
   return (
     <div
+      onMouseEnter={() => setPlaying(`${property?.id}`)}
+      onMouseLeave={() => setPlaying("")}
       onClick={() => !isClient && onOpen("propertyDetails", { property })}
       className={cn(
         "flex flex-col w-full rounded-[3.27px] propertyCardShadow h-[470px] max-w-sm bg-white relative",
@@ -37,17 +48,35 @@ function PropertyCard({ property, isClient = false }: PropertyCardProps) {
         </div>
       )}
       <div className="relative w-full min-h-[285px] h-[285px]">
-        <Image
-          alt="Property"
-          src={
-            //@ts-ignore
-            images[0].url || ""
-          }
-          fill
-          objectFit="conver"
-          quality={100}
-          className="object-cover w-full h-full rounded-[3.27px]"
-        />
+        {
+          //@ts-ignore
+          images[0].type && images[0].type.startsWith("video") ? (
+            <ReactPlayer
+              url={
+                //@ts-ignore
+                images[0].url || ""
+              }
+              playing={playing}
+              height={"285px"}
+              width={"100%"}
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          ) : (
+            <Image
+              alt="Property"
+              src={
+                //@ts-ignore
+                images[0].url || ""
+              }
+              fill
+              objectFit="conver"
+              quality={100}
+              className="object-cover w-full h-full rounded-[3.27px]"
+            />
+          )
+        }
       </div>
       <div className="w-full p-4 space-y-3 flex flex-col justify-between h-full">
         <div className="space-y-3">
